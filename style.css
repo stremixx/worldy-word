@@ -45,7 +45,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center; 
-
+}
 
 
 .word-row {
@@ -115,5 +115,4 @@ h1 {
 /*IN CASE I WANT TO USE THE HOVER */
 /*.key:hover {
     background-color: rgb(230, 230, 230);
-    transition: 2ms;
-}*/
+    transition: 2ms;*/
