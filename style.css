@@ -57,7 +57,7 @@ h1 {
 .tile {
     font-family: "Libre Baskerville", serif;
     color:rgb(70, 38, 156);
-
+    background-color: rgb(255, 255, 255);
 
     border: 2px solid rgb(175, 92, 196);
     width: 10px;
