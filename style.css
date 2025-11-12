@@ -1,15 +1,104 @@
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
 body {
     background-color: rgb(249, 236, 255);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
 }
 
 
 
 h1 {
     font-family: "Roboto Mono", monospace;
+    margin-bottom: 150px;
+    color:rgb(70, 38, 156);
+}
+
+.top-title {
+    font-weight: 500px;
+    font-size: 60px
 }
 
 
 
-word-row {
+.word-row {
     font-family: "Roboto Mono", monospace;
+    display: flex;
+    flex-direction: row;
+}
+
+.tile {
+    font-family: "Libre Baskerville", serif;
+    color:rgb(70, 38, 156);
+
+
+    border: 2px solid rgb(175, 92, 196);
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 10px;
+    padding: 25px;
+    font-size: 30px;
+    border-radius: 20%;
+
+}
+
+.keyboard {
+    
+    margin-top: 50px;
+    font-family: "Roboto Mono", monospace;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center rows horizontally */
+}
+
+.keyboard-row {
+    display: flex; /* Each row is a flex container for keys */
+}
+
+.key {
+    border: 2px solid rgb(0, 0, 0);
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20%;
+    background-color: white;
+    
+}
+
+.key:hover {
+    background-color: rgb(230, 230, 230);
+    transition: 2ms;
 }
