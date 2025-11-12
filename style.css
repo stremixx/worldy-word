@@ -33,7 +33,6 @@ body {
 
 h1 {
     font-family: "Roboto Mono", monospace;
-    margin-bottom: 150px;
     color:rgb(70, 38, 156);
 }
 
@@ -45,8 +44,7 @@ h1 {
 .game-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center children horizontally */
-}
+    align-items: center; 
 
 
 
@@ -79,13 +77,13 @@ h1 {
     
     margin-top: 50px;
     font-family: "Roboto Mono", monospace;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center rows horizontally */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
 }
 
 .keyboard-row {
-    display: flex; /* Each row is a flex container for keys */
+    display: flex; /
 }
 
 .key {
@@ -101,10 +99,21 @@ h1 {
     font-size: 16px;
     border-radius: 20%;
     background-color: white;
+    cursor: pointer;
     
 }
 
-.key:hover {
+.key[data-key="ENTER"], .key[data-key="DEL"] 
+{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(136, 87, 148);
+    color:white;
+}
+
+
+/*IN CASE I WANT TO USE THE HOVER */
+/*.key:hover {
     background-color: rgb(230, 230, 230);
     transition: 2ms;
-}
+}*/
