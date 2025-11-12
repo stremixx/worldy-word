@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // show the result of the choosing to the console
     console.log(randomWord);
     
+    let currentRowIndex = 1;
+    let currentColIndex = 0;
     
     //on screen keyboard listerners
     // get all keys from keyboard
@@ -42,7 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //Function to handle letter input being pressed
     function handleLetterInput(letter) {
-        console.log(`letter pressed: ${letter}`);
+        // Only add a letter if the current row is not full
+        if (currentColIndex < 5) {
+            const tile = document.querySelector(`#row-${currentRowIndex} .tile[data-col="${currentColIndex}"]`);
+            if (tile) {
+                tile.textContent = letter;
+                currentColIndex++;
+            }
+        }
     }
     
     // enter key
@@ -52,8 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //delete key
 function handleDelete() {
-    console.log('delete pressed');
-} //ADD THE LOGIC LATER ON bruh
+    // Only delete if there's a letter to delete in the current row
+    if (currentColIndex > 0) {
+        currentColIndex--;
+        const tile = document.querySelector(`#row-${currentRowIndex} .tile[data-col="${currentColIndex}"]`);
+        if (tile) {
+            tile.textContent = '';
+        }
+    }
+} 
 
     
     
