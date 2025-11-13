@@ -1,21 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordsArray = [
-      "apple",
-      "table",
-      "world",
-      "grape",
-      "light",
-      "audio",
-      "music",
-      "dream",
-      "water",
-      "stone",
-      "smile",
-      "cloud"
+        "apple",
+        "table",
+        "world",
+        "grape",
+        "light",
+        "audio",
+        "music",
+        "dream",
+        "water",
+        "stone",
+        "smile",
+        "cloud",
+        "house", "plant", "train", "bread", "chair", 
+        "dance", "beach", "piano", "money", "party", 
+        "pizza", "tiger", "lemon", "river", "ocean", 
+        "earth", "space", "stars", "night", "watch", 
+        "clock", "phone", "paper", "glass", "grass", 
+        "green", "white", "black", "sweet", "happy", 
+        "funny", "crazy", "angry", "quick", "smart", 
+        "brave", "clean", "dirty", "fresh", "salty", 
+        "spicy", "sharp", "heavy", "thick", "thin", 
+        "round", "proud", "lucky", "eager", "early", 
+        "daily", "sunny", "rainy", "windy", "snowy", 
+        "storm", "quiet", "loudly", "soft", "heart",
+        "sugar", "spice", "flame", "fruit", "berry",
+        "melon", "mango", "peach", "toast", "salad",
+        "lunch", "diner", "plate", "spoon", "knife",
+        "forks", "glass", "drink", "juice", "soda",
+        "snack", "candy", "treat", "baker", "cooks",
+        "chefs", "grill", "roast", "fried", "boiled",
+        "steam", "sauce", "crust", "dough", "wheat",
+        "grain", "flour", "yeast", "honey", "syrup"
     ]
     
     //12 words 
     
+    //SELECTS RANDOM STRING FROM ARRAY OF WORDS
     function selectRandomWord(wordsArray) {
         
         //check if an array is empty inn case for errors
@@ -23,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return undefined;
         }
     
-        //generate a random index between 0 and the array list lenght at first 12
+        //generate a random index between 0 and the array list lenght 
         const randomIndex = Math.floor(Math.random() * wordsArray.length);
         return wordsArray[randomIndex];
     }
