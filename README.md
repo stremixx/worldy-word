@@ -1,7 +1,7 @@
 
 ## Worldly 
 
-<img src="./ICO.SVG" style="width:256px;">
+<img src="./ICO.SVG" style="width:50px;">
 
 A game about guessing words.
 
