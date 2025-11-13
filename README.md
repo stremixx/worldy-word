@@ -1,4 +1,4 @@
-# Worldly <img src="./ICO.SVG">
+# Worldly <img src="./ICO.SVG" style="width:200px;">
 
 A game about guessing words.
 
