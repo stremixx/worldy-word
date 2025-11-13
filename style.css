@@ -130,6 +130,16 @@ h1 {
     color:white;
 }
 
+#game-message {
+    font-family: "Roboto Mono", monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(70, 38, 156);
+    margin: 15px 0;
+    height: 30px; /* Prevents layout shift when message appears */
+    text-align: center;
+}
+
 
 /*IN CASE I WANT TO USE THE HOVER */
 /*.key:hover {

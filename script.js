@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentRowIndex = 1;
     let currentColIndex = 0;
+    let isGameOver = false;
+    const messageElement = document.getElementById('game-message');
     
     //on screen keyboard listerners
     // get all keys from keyboard
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //Function to handle letter input being pressed
     function handleLetterInput(letter) {
+        if (isGameOver) return;
         // Only add a letter if the current row is not full
         if (currentColIndex < 5) {
             const tile = document.querySelector(`#row-${currentRowIndex} .tile[data-col="${currentColIndex}"]`);
@@ -56,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // enter key
     function handleEnter() {
+        if (isGameOver) return;
         if (currentColIndex < 5) {
             
             console.log('Word is not long enough.');
@@ -91,9 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (guessedWord === randomWord) {
-            console.log('Congratulations! You guessed the word.');
-        } else if (guessedWord !== randomWord && currentRowIndex === 6) {
-            console.log('GAME OVER');
+            messageElement.textContent = 'Congratulations! You won!';
+            isGameOver = true;
+            return; // Stop further execution in this function
+        }
+        
+        if (currentRowIndex === 6) {
+            messageElement.textContent = `Game Over! The word was: ${randomWord.toUpperCase()}`;
+            isGameOver = true;
         }
 
         // Move to the next row for the next guess
@@ -103,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //delete key
 function handleDelete() {
+    if (isGameOver) return;
     // Only delete if there's a letter to delete in the current row
     if (currentColIndex > 0) {
         currentColIndex--;
@@ -120,6 +130,7 @@ function handleDelete() {
 
     //event listner for keyboard press
     document.addEventListener('keydown', (event) => {
+        if (isGameOver) return;
         console.log(`dev key is pressed! is: ${event.key}`);
         
         if (event.key === '9') {
