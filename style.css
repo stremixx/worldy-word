@@ -37,7 +37,7 @@ h1 {
 }
 
 .top-title {
-    font-weight: 500px;
+    font-weight: 500;
     font-size: 60px
 }
 
@@ -60,14 +60,14 @@ h1 {
     background-color: rgb(255, 255, 255);
 
     border: 2px solid rgb(175, 92, 196);
-    width: 10px;
-    height: 10px;
-    margin: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     text-align: center;
-    line-height: 10px;
-    padding: 25px;
+    line-height: 30px;
+    padding: 10px;
     font-size: 30px;
     border-radius: 20%;
 
@@ -94,7 +94,7 @@ h1 {
 
 .keyboard {
     
-    margin-top: 50px;
+    margin-top: 20px;
     font-family: "Roboto Mono", monospace;
     display: flex; 
     flex-direction: column; 

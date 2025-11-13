@@ -110,52 +110,52 @@ document.addEventListener('DOMContentLoaded', () => {
         currentColIndex = 0;
     }
 
-//delete key
-function handleDelete() {
-    if (isGameOver) return;
-    // Only delete if there's a letter to delete in the current row
-    if (currentColIndex > 0) {
-        currentColIndex--;
-        const tile = document.querySelector(`#row-${currentRowIndex} .tile[data-col="${currentColIndex}"]`);
-        if (tile) {
-            tile.textContent = '';
-        }
-    }
-} 
-
-    //DEV MODE CODE
-    // Reference to h2 element for dev mode
-    const devAnswer = document.querySelector('.devMode-answer');
-    let devMode = false;
-
-    //event listner for keyboard press
-    document.addEventListener('keydown', (event) => {
+    //delete key
+    function handleDelete() {
         if (isGameOver) return;
-        console.log(`dev key is pressed! is: ${event.key}`);
-        
-        if (event.key === '9') {
-            devmode = true;
-            //DEVMODE CHEAT - SHOW CURRENT WORD
-            if (devmode && devAnswer) {
-                devAnswer.textContent = `Answer: ${randomWord}`;
+        // Only delete if there's a letter to delete in the current row
+        if (currentColIndex > 0) {
+            currentColIndex--;
+            const tile = document.querySelector(`#row-${currentRowIndex} .tile[data-col="${currentColIndex}"]`);
+            if (tile) {
+                tile.textContent = '';
             }
         }
-    });
+    } 
 
+        //DEV MODE CODE
+        // Reference to h2 element for dev mode
+        const devAnswer = document.querySelector('.devMode-answer');
+        let devMode = false;
 
-    //LISTENER FOR EACH WORD CLICK
-    // click listner for each key
-    keyboardKeys.forEach(key => {
-        key.addEventListener('click', () => {
-            const keyValue = key.dataset.key; // get value from each data attribute in html
-            if (keyValue === 'ENTER') {
-                handleEnter();
-            } else if (keyValue === 'DEL') {
-                handleDelete();
-            } else {
-                handleLetterInput(keyValue);
-            } 
-                
-            });
+        //event listner for keyboard press
+        document.addEventListener('keydown', (event) => {
+            if (isGameOver) return;
+            console.log(`dev key is pressed! is: ${event.key}`);
+            
+            if (event.key === '9') {
+                devmode = true;
+                //DEVMODE CHEAT - SHOW CURRENT WORD
+                if (devmode && devAnswer) {
+                    devAnswer.textContent = `Answer: ${randomWord}`;
+                }
+            }
         });
+
+
+        //LISTENER FOR EACH WORD CLICK
+        // click listner for each key
+        keyboardKeys.forEach(key => {
+            key.addEventListener('click', () => {
+                const keyValue = key.dataset.key; // get value from each data attribute in html
+                if (keyValue === 'ENTER') {
+                    handleEnter();
+                } else if (keyValue === 'DEL') {
+                    handleDelete();
+                } else {
+                    handleLetterInput(keyValue);
+                } 
+                    
+                });
+            });
 });
