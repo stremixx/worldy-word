@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "water",
         "stone",
         "smile",
-        "cloud",
+        "cloud", "horse",
         "house", "plant", "train", "bread", "chair", 
         "dance", "beach", "piano", "money", "party", 
         "pizza", "tiger", "lemon", "river", "ocean", 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // enter key
+    // ENTER KEY FUNCTION - CHECKS IF WORD HAS 5 LETTERS
     function handleEnter() {
         if (isGameOver) return;
         if (currentColIndex < 5) {
@@ -95,6 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         guessedWord = guessedWord.toLowerCase();
+
+        //CHECK NO.2 IS THE WORD BELONGING TO THE ARRAY
+        if (!wordsArray.includes(guessedWord)) {
+            alert("Not in Word List");
+            return;
+        }
+
         console.log(`Guessed: ${guessedWord}, Answer: ${randomWord}`);
 
         // LETTER BY LETTER VERIFICATION
