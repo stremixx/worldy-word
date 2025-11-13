@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "lunch", "diner", "plate", "spoon", "knife",
         "forks", "glass", "drink", "juice", "soda",
         "snack", "candy", "treat", "baker", "cooks",
-        "chefs", "grill", "roast", "fried", "boiled",
+        "chefs", "grill", "roast", "fried", "jazzy",
         "steam", "sauce", "crust", "dough", "wheat",
         "grain", "flour", "yeast", "honey", "syrup"
     ]
