@@ -73,6 +73,25 @@ h1 {
 
 }
 
+.tile.correct {
+    background-color: #094904; 
+    color: white;
+    border: 2px solid rgb(175, 92, 196);
+}
+
+.tile.present {
+    background-color: #d67200; 
+    color: white;
+    border: 2px solid rgb(175, 92, 196);
+}
+
+.tile.absent {
+    background-color: #000000; 
+    color: white;
+    border: 2px solid rgb(175, 92, 196);
+}
+
+
 .keyboard {
     
     margin-top: 50px;

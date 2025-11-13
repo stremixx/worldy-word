@@ -50,13 +50,55 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tile) {
                 tile.textContent = letter;
                 currentColIndex++;
-            }
+            };
         }
     }
     
     // enter key
     function handleEnter() {
-        console.log('enter pressed');
+        if (currentColIndex < 5) {
+            
+            console.log('Word is not long enough.');
+            return;
+        }
+
+        const currentRow = document.querySelector(`#row-${currentRowIndex}`);
+        const tiles = currentRow.querySelectorAll('.tile');
+        let guessedWord = '';
+        tiles.forEach(tile => {
+            guessedWord += tile.textContent;
+        });
+
+        guessedWord = guessedWord.toLowerCase();
+        console.log(`Guessed: ${guessedWord}, Answer: ${randomWord}`);
+
+        // Letter-by-letter verification
+        for (let i = 0; i < 5; i++) {
+            const tile = tiles[i];
+            const guessedLetter = guessedWord[i];
+            const correctLetter = randomWord[i];
+
+            if (guessedLetter === correctLetter) {
+                // Correct letter in the correct position
+                tile.classList.add('correct');
+            } else if (randomWord.includes(guessedLetter)) {
+                // Correct letter in the wrong position
+                tile.classList.add('present');
+            } else {
+                // Incorrect letter
+                tile.classList.add('absent');
+            }
+        }
+
+        if (guessedWord === randomWord) {
+            console.log('Congratulations! You guessed the word.');
+        } else if (guessedWord !== randomWord && currentRowIndex === 6) {
+            console.log('GAME OVER');
+        }
+
+        // Move to the next row for the next guess
+        currentRowIndex++;
+        currentColIndex = 0;
     }
 
 //delete key
@@ -71,8 +113,26 @@ function handleDelete() {
     }
 } 
 
-    
-    
+    //DEV MODE CODE
+    // Reference to h2 element for dev mode
+    const devAnswer = document.querySelector('.devMode-answer');
+    let devMode = false;
+
+    //event listner for keyboard press
+    document.addEventListener('keydown', (event) => {
+        console.log(`dev key is pressed! is: ${event.key}`);
+        
+        if (event.key === '9') {
+            devmode = true;
+            //DEVMODE CHEAT - SHOW CURRENT WORD
+            if (devmode && devAnswer) {
+                devAnswer.textContent = `Answer: ${randomWord}`;
+            }
+        }
+    });
+
+
+    //LISTENER FOR EACH WORD CLICK
     // click listner for each key
     keyboardKeys.forEach(key => {
         key.addEventListener('click', () => {
