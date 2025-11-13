@@ -76,21 +76,36 @@ document.addEventListener('DOMContentLoaded', () => {
         guessedWord = guessedWord.toLowerCase();
         console.log(`Guessed: ${guessedWord}, Answer: ${randomWord}`);
 
-        // Letter-by-letter verification
+        // LETTER BY LETTER VERIFICATION
         for (let i = 0; i < 5; i++) {
             const tile = tiles[i];
             const guessedLetter = guessedWord[i];
             const correctLetter = randomWord[i];
 
+            //FIND THE KEY ON THE ON-SCREEN KEYBOARD
+            const key = document.querySelector(`.key[data-key="${guessedLetter.toUpperCase()}"]`);
+
             if (guessedLetter === correctLetter) {
                 // Correct letter in the correct position
                 tile.classList.add('correct');
+                if (key) { 
+                    key.classList.remove('present'); //remove present if marked before
+                    key.classList.add('correct');
+                }
             } else if (randomWord.includes(guessedLetter)) {
                 // Correct letter in the wrong position
                 tile.classList.add('present');
+                if (key && !key.classList.contains('correct')) {
+                    //only add present if not already correct
+                    key.classList.add('present');
+                }
             } else {
                 // Incorrect letter
                 tile.classList.add('absent');
+                if (key && !key.classList.contains('correct') && !key.classList.contains('present')) {
+                    //onyl add absentr if its not already correct or present
+                    key.classList.add('absent');
+                }
             }
         }
 

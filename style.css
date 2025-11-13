@@ -140,8 +140,19 @@ h1 {
     text-align: center;
 }
 
+/*KEYBOARD CORRECT/WRONG KEYS COLOR CHANGES */
 
-/*IN CASE I WANT TO USE THE HOVER */
-/*.key:hover {
-    background-color: rgb(230, 230, 230);
-    transition: 2ms;*/
+.key.correct {
+    background-color: #094904 !important;
+    color:white;
+}
+
+.key.present {
+    background-color: #d67200 !important;
+    color:white;
+}
+
+.key.absent {
+    background-color: #000000 !important;
+    color:white;
+}
