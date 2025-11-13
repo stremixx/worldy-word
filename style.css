@@ -156,3 +156,22 @@ h1 {
     background-color: #000000 !important;
     color:white;
 }
+
+.resetButton {
+    background-color: #a400b3;
+    font-family: "Roboto Mono", monospace; 
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px; 
+    border-radius: 10px;
+    border: 2px solid rgb(70, 38, 156);
+    cursor: pointer; 
+    text-align: center;
+}
+
+.resetButton:hover {
+    background-color: #e025f1; 
+}

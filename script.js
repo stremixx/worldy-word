@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    //FUNCTION TO RESET PAGE AFTER GAME IS OVER TO START AGAIN
+    function reboot(){
+        location.reload();
+    }
+
+    function resetButton(){
+        const restartButton = document.createElement("div");
+        restartButton.classList.add("resetButton");
+        restartButton.textContent = "Play again"; // adds it to the bottom
+
+        //make the page reload the page when clicked
+        restartButton.addEventListener('click', reboot);
+        //ADD BUTTON TO PAGE
+        messageElement.after(restartButton);
+    }
+    
     const wordsArray = [
         "apple",
         "table",
@@ -137,21 +154,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //WIN THE GAME CHECK AND EXECUTION
         if (guessedWord === randomWord) {
             messageElement.textContent = 'Congratulations! You won!';
             isGameOver = true;
+            resetButton();
             return; // Stop further execution in this function
         }
+
         
+        //GAME IS OVER AND LOST WHEN THIS RUNS
         if (currentRowIndex === 6) {
             messageElement.textContent = `Game Over! The word was: ${randomWord.toUpperCase()}`;
             isGameOver = true;
+            resetButton();
         }
 
         // Move to the next row for the next guess
         currentRowIndex++;
         currentColIndex = 0;
     }
+
+    
+
 
     //delete key
     function handleDelete() {
