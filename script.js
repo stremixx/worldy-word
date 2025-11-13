@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "dream",
         "water",
         "stone",
-        "smile",
+        "smile", "final", "truce",
         "cloud", "horse",
         "house", "plant", "train", "bread", "chair", 
         "dance", "beach", "piano", "money", "party", 
