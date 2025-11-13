@@ -1,4 +1,7 @@
-# Worldly
+
+## Worldly 
+
+<img src="./ICO.SVG" style="width:100px;">
 
 A game about guessing words.
 
@@ -12,9 +15,9 @@ A word guessing game implemented in [Language]. Players try to guess a hidden wo
 
 ## How to Play
 
-1.  Run the application.
-2.  Enter a 5 letter word.
-3.  Guess the word.
+1. Guess a five letter word
+2. Check if its the correct one
+3. Restart if game is over
 
 ## License
 
